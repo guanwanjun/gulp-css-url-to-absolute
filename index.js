@@ -4,8 +4,10 @@ var through = require('through2');
 var path = require('path');
 
 module.exports = function(options) {
-  var root = options.root;
-
+  var root = options && options.root?options.root:process.cwd();
+  if (/\.\//.test(root) || /\.\.\//.test(root)) {
+    root = path.join(process.cwd(), root);
+  }
   function convertUrls(css, fileDir) {
      return rework(css)
        .use(reworkUrl(function(url) {
