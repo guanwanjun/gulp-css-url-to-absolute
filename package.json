@@ -1,6 +1,6 @@
 {
   "name": "gulp-css-url-to-absolute",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "convert css relative url to absolute",
   "main": "index.js",
   "scripts": {
